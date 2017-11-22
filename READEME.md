@@ -1,6 +1,3 @@
----
-
----
 
 ## XSTZ_load_test
 
