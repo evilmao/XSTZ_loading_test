@@ -1,12 +1,9 @@
----
-
----
 
 ## XSTZ_load_test
 
 用来测试鑫圣投资平台注资行为的压力脚本.
 
-##Requiretments
+## Requiretments
 
 Running Environment(运行环境)
 
@@ -14,13 +11,13 @@ Running Environment(运行环境)
 *  Linux/Windows/MAC OS
 *  Third-party library (threading, threadingpool )
 
-##Installation(安装)
+## Installation(安装)
 
 *  git clone  <https://github.com/evilmao/XSTZ_loading_test.git>
 *  cd XSTZ_load_test
 *  `pip install -r requirements.txt`
 
-##Usage 
+## Usage 
 
 *  安装完毕后，根据需求编辑datainfo.py文件，包含但不限于以下内容 payload(基本参数)，accountinfo(账户信息)，url(API接口)
 
