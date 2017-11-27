@@ -27,10 +27,12 @@ Running Environment(运行环境)
 
 *  `InjectionTrade_thread.py` 基于threading.Thread() 多线程模型，lInux单核模式下测试。
 
+*  `InjectionTrade_Influxdb.py` 是基于数据库Influxdb，讲返回的结果实时插入数据库中，后期开发便于实现图文结合！
+
 *  执行
 
     ```shell
-   python InjectionTrade_threadpool.py  #pool = threadpool.ThreadPool(500) //line41 可调节并发数
+       python InjectionTrade_threadpool.py  #pool = threadpool.ThreadPool(500) //line41 可调节并发数
     ```
 
 *  取值：成功失败数据被写入本地文件 Injection_success.txt 和Injection_error.txt中，打开文本获得压测基本数据。
@@ -38,3 +40,22 @@ Running Environment(运行环境)
 ## Support 
 
 此脚本分三个版本，分别使用多线程，多进程，线程池方式进行测试，建议使用线程池方法，同时，在模拟多用户时，需尽量使用多个账号进程测试。否则出现 `{'IsSuccess': False, 'Message': "不能在具有唯一索引 'IX_MS_Deposit_BillNo' 的对象 'dbo.MS_Deposit' 中插入重复键的行。\r\n语句已终止。", 'Page': None}` 错误。
+
+
+
+## Update
+
+update: 27/11/2017
+
+-  优化influxdb细节操作：新增data_processing模块,直接从influxdb数据库中获得测试结果
+
+-  执行文件：`python data_processing.py`
+
+   >  1.显示测试并发数
+   >
+   >  2.显示成功率
+   >
+   >  3.显示rps（平均响应时间）
+
+   ​
+
